@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #09090B;
+  --color-surface: #111113;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text-primary: #FAFAFA;
+  --color-text-secondary: #A1A1AA;
+  --color-text-muted: #71717A;
+  
+  --font-sans: "Geist Sans", sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply bg-bg-dark text-text-primary font-sans antialiased;
+  }
+  
+  ::selection {
+    @apply bg-white/20 text-white;
+  }
+
+  /* Lenis smooth scrolling requires html to not have smooth behavior */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
