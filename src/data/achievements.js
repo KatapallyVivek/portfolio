@@ -1,28 +1,28 @@
-import { FiAward, FiGithub, FiTerminal, FiDatabase } from 'react-icons/fi';
+import { FiAward, FiCode } from 'react-icons/fi';
 
 export const achievements = [
   {
-    id: 'leetcode',
-    title: 'LeetCode Problem Solver',
-    description: 'Consistently solving complex algorithmic challenges and optimizing data structures.',
-    icon: FiTerminal,
-  },
-  {
-    id: 'github',
-    title: 'Open Source Contributor',
-    description: 'Active contributor to various open-source projects, improving code quality and fixing bugs.',
-    icon: FiGithub,
-  },
-  {
-    id: 'hackathon',
-    title: 'Hackathon Winner',
-    description: 'Built scalable prototypes under extreme time constraints.',
+    id: 'innovation-day',
+    badge: 'WINNER',
+    title: 'Best Web Application',
+    event: 'Innovation Day Hackathon',
+    organization: 'Sree Dattha Group of Institutions',
+    description: 'Awarded Best Web Application for developing Alertify, recognized for innovative design, responsive and clean UI, selected among 50+ participating teams.',
     icon: FiAward,
+    color: 'text-yellow-400',
+    bgColor: 'bg-yellow-400/10',
+    borderColor: 'border-yellow-400/20'
   },
   {
-    id: 'npm',
-    title: 'npm Package Creator',
-    description: 'Published utility libraries focusing on developer experience and bundle optimization.',
-    icon: FiDatabase,
+    id: 'ai-tools-event',
+    badge: 'RUNNER-UP',
+    title: 'Frontend Web Application',
+    event: 'AI Tools Project Program',
+    organization: 'Sree Dattha Group of Institutions  ',
+    description: 'Developed a frontend web application using AI tools in a limited-time hackathon setting, achieving runner-up among 20+ teams.',
+    icon: FiCode,
+    color: 'text-zinc-300',
+    bgColor: 'bg-zinc-300/10',
+    borderColor: 'border-zinc-300/20'
   }
 ];

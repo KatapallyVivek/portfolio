@@ -2,11 +2,11 @@ export const projects = [
   {
     id: 'countro',
     title: 'Countro',
-    description: 'A premium counter and habit tracking application designed with focus and simplicity in mind. Features beautiful typography, smooth animations, and comprehensive analytics to help users build lasting routines.',
-    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'MongoDB'],
-    image: '/images/countro.jpg', // Placeholder path
-    liveLink: '#',
-    sourceLink: '#',
+    description: 'Countro is a lightweight Node.js CLI tool that simplifies common file and directory operations directly from the terminal. It provides short, easy-to-remember commands for managing files, inspecting directories, and performing basic text analysis.\n\nIt helps beginners to learn CLI and terminal flow without setting up Linux.\n\n🏆 600+ active users / 600+ downloads',
+    tech: ['Node.js', 'JavaScript', 'CLI', 'npm'],
+    image: null,
+    liveLink: 'https://www.npmjs.com/package/countro',
+    sourceLink: 'https://github.com/KatapallyVivek/countro-cli',
   },
   {
     id: 'expense-tracker',

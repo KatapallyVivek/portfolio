@@ -9,9 +9,9 @@ import TechBadge from '../components/ui/TechBadge';
 import HeroWorkspace from '../components/ui/HeroWorkspace';
 import { projects } from '../data/projects';
 import { achievements } from '../data/achievements';
-import { education } from '../data/education';
 import { technologies } from '../data/tech';
 import { motion } from 'framer-motion';
+import EducationSection from '../components/ui/EducationSection';
 
 export default function Home() {
   const featuredProject = projects[0];
@@ -83,30 +83,55 @@ export default function Home() {
               subtitle="Highlights from my engineering journey."
             />
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 perspective-1000">
               {achievements.map((achievement, idx) => {
                 const Icon = achievement.icon;
                 return (
                   <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 30, rotateX: 15 }}
+                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    whileHover={{ y: -5 }}
+                    transition={{ duration: 0.6, delay: idx * 0.15, type: 'spring', bounce: 0.4 }}
+                    whileHover={{ scale: 1.02, rotateY: idx === 0 ? 3 : -3, zIndex: 10 }}
                     key={achievement.id} 
-                    className="group relative p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors overflow-hidden"
+                    className="relative group h-full"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
-                    <div className="flex items-start gap-5 relative z-10">
-                      <div className="p-3 rounded-xl bg-white/5 border border-white/5 group-hover:border-white/20 transition-colors shadow-lg">
-                        <Icon className="text-xl text-text-secondary group-hover:text-white transition-colors" />
+                    {/* Animated Aura Glow */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
+                    
+                    <div className="relative h-full p-6 md:p-8 rounded-3xl border border-white/10 bg-[#111113]/90 backdrop-blur-2xl shadow-xl overflow-hidden flex flex-col justify-between">
+                      
+                      {/* Decorative Background Element */}
+                      <div className="absolute -top-16 -right-16 w-48 h-48 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors duration-700 pointer-events-none"></div>
+
+                      <div className="relative z-10">
+                        <div className="flex justify-between items-start mb-6">
+                          <motion.div 
+                            animate={{ rotate: [0, 10, -10, 0] }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: idx }}
+                            className={`w-12 h-12 rounded-xl ${achievement.bgColor} flex items-center justify-center border ${achievement.borderColor} shadow-inner`}
+                          >
+                            <Icon className={`text-2xl ${achievement.color}`} />
+                          </motion.div>
+                          <span className={`px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full border ${achievement.borderColor} ${achievement.color} bg-black/50 backdrop-blur-md`}>
+                            {achievement.badge}
+                          </span>
+                        </div>
+                        
+                        <h3 className="text-xl lg:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all duration-300">
+                          {achievement.title}
+                        </h3>
+                        
+                        <div className="font-mono text-xs text-blue-400/80 mb-5 flex flex-wrap items-center gap-2">
+                          <span>{achievement.event}</span>
+                          <span className="w-1 h-1 rounded-full bg-white/20"></span>
+                          <span className="text-white/40">{achievement.organization}</span>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-text-primary mb-2 group-hover:text-white transition-colors">{achievement.title}</h3>
-                        <p className="text-sm text-text-secondary leading-relaxed">
-                          {achievement.description}
-                        </p>
-                      </div>
+
+                      <p className="text-text-secondary leading-relaxed text-sm relative z-10 mt-auto">
+                        {achievement.description}
+                      </p>
                     </div>
                   </motion.div>
                 );
@@ -116,45 +141,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Education Section */}
-      <section className="py-24 md:py-32 bg-surface/30 border-t border-white/5">
-        <Container>
-          <AnimatedSection>
-            <SectionTitle 
-              title="Education" 
-            />
-            
-            <div className="mt-16 max-w-3xl">
-              {education.map((edu) => (
-                <div key={edu.id} className="relative pl-8 md:pl-0 border-l border-white/10 md:border-l-0">
-                  <div className="hidden md:block absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-white/20 border-2 border-[#09090b]"></div>
-                  
-                  <div className="md:grid md:grid-cols-4 md:gap-8 items-start relative">
-                    <div className="md:col-span-1 mb-4 md:mb-0 md:text-right md:pr-8 md:border-r md:border-white/10">
-                      <span className="text-sm font-medium text-text-secondary px-3 py-1 bg-white/5 rounded-full border border-white/5 inline-block mb-2 md:mb-0">
-                        {edu.year}
-                      </span>
-                    </div>
-                    
-                    <div className="md:col-span-3">
-                      <h3 className="text-xl font-bold text-text-primary mb-1">{edu.degree} in {edu.major}</h3>
-                      <p className="text-text-secondary font-medium mb-3">{edu.college} <span className="text-text-muted mx-2">•</span> CGPA: {edu.cgpa}</p>
-                      
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {edu.coursework.map(course => (
-                          <span key={course} className="text-xs text-text-muted px-2 py-1 rounded-md bg-white/5 border border-white/5">
-                            {course}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-        </Container>
-      </section>
+      <EducationSection />
 
       {/* Technologies Section */}
       <section className="py-24 md:py-32 border-t border-white/5">
