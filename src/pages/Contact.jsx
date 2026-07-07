@@ -1,7 +1,7 @@
 import Container from '../components/layout/Container';
 import PageTransition from '../components/layout/PageTransition';
 import AnimatedSection from '../components/layout/AnimatedSection';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight } from 'react-icons/fi';
 import { RiTwitterXFill } from 'react-icons/ri';
 
 const contactLinks = [
@@ -18,12 +18,12 @@ export default function Contact() {
         <Container className="w-full">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
                 Let's build something <br className="hidden md:block" />
                 meaningful.
               </h1>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-16">
                 {contactLinks.map((link) => {
                   const Icon = link.icon;
                   return (
@@ -32,15 +32,15 @@ export default function Contact() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                      className="group flex items-center justify-between p-6 rounded-2xl border border-white/5 bg-[#111113] hover:bg-[#18181b] hover:border-white/20 hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
                     >
                       <div className="flex items-center gap-4">
                         <Icon className="text-xl text-text-secondary group-hover:text-white transition-colors" />
-                        <span className="text-lg font-medium text-text-primary">{link.name}</span>
+                        <span className="text-lg font-medium text-text-primary group-hover:text-white transition-colors">{link.name}</span>
                       </div>
-                      <span className="text-text-muted group-hover:text-white transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1">
-                        ↗
-                      </span>
+                      <div className="w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-white/5 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+                        <FiArrowUpRight className="text-text-muted group-hover:text-white transition-colors" />
+                      </div>
                     </a>
                   );
                 })}

@@ -9,36 +9,37 @@ export default function About() {
         <Container>
           <AnimatedSection>
             <div className="max-w-3xl mx-auto">
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-16">About</h1>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-16">About</h1>
               
-              <div className="prose prose-invert prose-lg max-w-none text-text-secondary">
+              <div className="prose prose-invert prose-lg max-w-none text-[#a1a1aa] leading-relaxed">
                 <p className="mb-8">
-                  I'm a software engineer who loves building products. I started my journey writing simple 
-                  scripts and quickly realized the power of software to solve real-world problems. Today, I focus 
-                  on full-stack development, creating applications that are fast, accessible, and beautiful.
+                  I'm a software engineer who genuinely enjoys the process of building products. 
+                  My engineering journey started with writing simple automation scripts, but it quickly evolved 
+                  into a deep fascination with how large-scale systems are architected and deployed.
                 </p>
                 
                 <p className="mb-8">
-                  My approach to engineering is rooted in simplicity. I believe that the best code is the code you 
-                  don't have to write. When I do write code, I strive for clarity over cleverness, ensuring that 
-                  the architecture is maintainable and scalable.
+                  Today, I focus heavily on full-stack development. I enjoy working across the entire stack—from 
+                  optimizing database queries on the backend to polishing interactive micro-animations on the frontend. 
+                  To me, great software is the result of both rigorous problem solving and a keen eye for design.
                 </p>
                 
                 <p className="mb-8">
-                  I enjoy the entire product lifecycle—from the initial wireframes to database design, API 
-                  architecture, and frontend polish. It's this holistic view that allows me to build features 
-                  that truly matter to users.
+                  My core philosophy is centered around clean architecture. I believe that writing code is easy, but 
+                  writing maintainable, scalable, and self-documenting code requires discipline. I prefer simplicity 
+                  over cleverness. If a complex problem can be solved with a simple, elegant abstraction, I consider 
+                  that a win.
                 </p>
 
                 <p className="mb-8">
-                  I primarily work with React, Node.js, and SQL/NoSQL databases. However, I consider myself 
-                  technology agnostic. A framework is just a tool; the real craft is in understanding the underlying 
-                  principles of computer science, performance optimization, and good design.
+                  I maintain a strong learning mindset. Technology evolves rapidly, and while I specialize in modern 
+                  tools like React and Node.js, I treat frameworks simply as tools to achieve a goal. The real craft 
+                  lies in understanding core computer science fundamentals, network protocols, and distributed systems.
                 </p>
                 
                 <p>
-                  I'm constantly learning. Whether it's deep diving into data structures, exploring new rendering 
-                  patterns, or refining my UI/UX skills, I believe that a great engineer is always a student.
+                  Ultimately, my goal is to build software that not only functions flawlessly but also feels 
+                  delightful to use. I build for the user, but I engineer for the future.
                 </p>
               </div>
             </div>
