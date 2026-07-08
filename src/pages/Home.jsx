@@ -5,13 +5,12 @@ import GridBackground from '../components/ui/GridBackground';
 import Button from '../components/ui/Button';
 import SectionTitle from '../components/ui/SectionTitle';
 import ProjectCard from '../components/ui/ProjectCard';
-import TechBadge from '../components/ui/TechBadge';
 import HeroWorkspace from '../components/ui/HeroWorkspace';
 import { projects } from '../data/projects';
 import { achievements } from '../data/achievements';
-import { technologies } from '../data/tech';
 import { motion } from 'framer-motion';
 import EducationSection from '../components/ui/EducationSection';
+import TechStack from '../components/ui/TechStack';
 
 export default function Home() {
   const featuredProject = projects[0];
@@ -143,41 +142,8 @@ export default function Home() {
 
       <EducationSection />
 
-      {/* Technologies Section */}
-      <section className="py-24 md:py-32 border-t border-white/5">
-        <Container>
-          <AnimatedSection>
-            <SectionTitle 
-              title="Tech Stack" 
-              subtitle="The tools and technologies I use to build scalable products."
-            />
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-              {Object.entries(technologies).map(([category, techList], idx) => (
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  whileHover={{ scale: 1.02 }}
-                  key={category} 
-                  className="relative p-6 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent hover:border-white/20 transition-all duration-300"
-                >
-                  <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-6 flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-white/40"></div>
-                    {category}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {techList.map(tech => (
-                      <TechBadge key={tech} name={tech} />
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </AnimatedSection>
-        </Container>
-      </section>
+      {/* Tech Stack Section */}
+      <TechStack />
     </PageTransition>
   );
 }
