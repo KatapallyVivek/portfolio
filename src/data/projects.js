@@ -12,18 +12,18 @@ export const projects = [
     id: 'expense-tracker',
     title: 'Expense Tracker',
     description: 'A robust financial tool that helps users monitor their spending patterns. Includes visual reports, custom categorization, and a highly responsive data grid for managing thousands of transactions effortlessly.',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Express'],
+    tech: ['React', 'Tailwind CSS', 'NodeJs', 'Chart.js', 'Javascript'],
     image: '/images/expense-tracker.jpg', // Placeholder path
-    liveLink: '#',
-    sourceLink: '#',
+    liveLink: 'https://expense-tracker-xi-one-52.vercel.app/',
+    sourceLink: 'https://github.com/madupojumounika/expense-tracker',
   },
   {
     id: 'crypto-tracker',
     title: 'Crypto Tracker',
     description: 'Real-time cryptocurrency dashboard offering live market data, interactive charting, and portfolio tracking. Engineered for high performance with minimal latency and optimized bundle size.',
-    tech: ['React', 'Vite', 'Tailwind CSS', 'WebSockets', 'Chart.js'],
+    tech: ['ReactJs', 'Firebase', 'Tailwind CSS', 'REST APIs', 'JavaScript'],
     image: '/images/crypto-tracker.jpg', // Placeholder path
-    liveLink: '#',
-    sourceLink: '#',
+    liveLink: 'https://crypto-tracker-virid-ten.vercel.app/',
+    sourceLink: 'https://github.com/madupojumounika/crypto-tracker',
   }
 ];
